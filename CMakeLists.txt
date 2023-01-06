@@ -10,11 +10,6 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(metalang99)
 
-add_library(crutches SHARED
-    src/main.c
-)
-
-target_link_libraries(crutches metalang99)
 
 FetchContent_Declare(
     interface99
@@ -22,6 +17,15 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(interface99)
+
+add_library(crutches SHARED
+    src/main.c
+)
+
+target_include_directories(crutches PUBLIC include)
+
+
+target_link_libraries(crutches metalang99)
 
 target_link_libraries(crutches interface99)
 
