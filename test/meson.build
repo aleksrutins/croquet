@@ -1,0 +1,1 @@
+executable('croquet-test', ['main.c'], dependencies: [croquet_dep], install: false)
